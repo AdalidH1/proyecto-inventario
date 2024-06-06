@@ -17,6 +17,11 @@ import { ProductosComponent } from './productos/productos.component';
 import { ListaProductosComponent } from './lista-productos/lista-productos.component';
 import { HttpClientModule } from '@angular/common/http';
 
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
+import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,10 +37,15 @@ import { HttpClientModule } from '@angular/common/http';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatDialogModule,
     MatSidenavModule,
     MatListModule,
     MatMenuModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatFormFieldModule,
+    MatListModule,
+    MatInputModule
 
   ],
   providers: [],
