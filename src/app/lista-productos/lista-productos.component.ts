@@ -9,6 +9,8 @@ import { ProductosService } from '../service/productos.service';
 
 import { Product } from '../models/product';
 import { MatDialog } from '@angular/material/dialog';
+import { FormProductsComponent } from '../form-products/form-products.component';
+import { elementAt } from 'rxjs';
 
 @Component({
   selector: 'app-lista-productos',
@@ -27,6 +29,30 @@ export class ListaProductosComponent implements OnInit {
   ngOnInit(): void {
   this.productListMethod();
   }
+  openDialog() {
+    const dialogRef = this.dialog.open(FormProductsComponent, {
+      data: null,
+    })
+    dialogRef.afterClosed().subscribe((result: any) => {
+      console.log('the dialog was closed')
+      if (result) {
+        this.productListMethod()
+      }
+    })
+  }
+
+  editDialog(element:Product) {
+    const dialogRef = this.dialog.open(FormProductsComponent, {
+      data: element,
+    })
+    dialogRef.afterClosed().subscribe((result: any) => {
+      console.log('the dialog was closed')
+      if (result) {
+        this.productListMethod()
+      }
+    })
+  }
+
   
   productListMethod(){
   try{

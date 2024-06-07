@@ -21,6 +21,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { FormProductsComponent } from './form-products/form-products.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MatInputModule } from '@angular/material/input';
     NavbarComponent,
     InicioComponent,
     ProductosComponent,
-    ListaProductosComponent
+    ListaProductosComponent,
+    FormProductsComponent
   ],
   imports: [
     BrowserModule,
