@@ -22,6 +22,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormProductsComponent } from './form-products/form-products.component';
+import { ModalEliminarComponent } from './modal-eliminar/modal-eliminar.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FormProductsComponent } from './form-products/form-products.component';
     InicioComponent,
     ProductosComponent,
     ListaProductosComponent,
-    FormProductsComponent
+    FormProductsComponent,
+    ModalEliminarComponent
   ],
   imports: [
     BrowserModule,

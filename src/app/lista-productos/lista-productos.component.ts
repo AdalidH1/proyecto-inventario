@@ -11,6 +11,7 @@ import { Product } from '../models/product';
 import { MatDialog } from '@angular/material/dialog';
 import { FormProductsComponent } from '../form-products/form-products.component';
 import { elementAt } from 'rxjs';
+import { ModalEliminarComponent } from '../modal-eliminar/modal-eliminar.component';
 
 @Component({
   selector: 'app-lista-productos',
@@ -31,6 +32,18 @@ export class ListaProductosComponent implements OnInit {
   }
   openDialog() {
     const dialogRef = this.dialog.open(FormProductsComponent, {
+      data: null,
+    })
+    dialogRef.afterClosed().subscribe((result: any) => {
+      console.log('the dialog was closed')
+      if (result) {
+        this.productListMethod()
+      }
+    })
+  }
+
+  deleteDialog() {
+    const dialogRef = this.dialog.open(ModalEliminarComponent, {
       data: null,
     })
     dialogRef.afterClosed().subscribe((result: any) => {
