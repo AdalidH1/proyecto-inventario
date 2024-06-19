@@ -1,16 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {AfterViewInit, ViewChild} from '@angular/core';
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
-import {MatSort, MatSortModule} from '@angular/material/sort';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
 import { ProductosService } from '../service/productos.service';
 
 import { Product } from '../models/product';
 import { MatDialog } from '@angular/material/dialog';
 import { FormProductsComponent } from '../form-products/form-products.component';
-import { elementAt } from 'rxjs';
 import { ModalEliminarComponent } from '../modal-eliminar/modal-eliminar.component';
 
 @Component({
@@ -30,6 +24,7 @@ export class ListaProductosComponent implements OnInit {
   ngOnInit(): void {
   this.productListMethod();
   }
+
   openDialog() {
     const dialogRef = this.dialog.open(FormProductsComponent, {
       data: null,
@@ -42,16 +37,26 @@ export class ListaProductosComponent implements OnInit {
     })
   }
 
-  deleteDialog() {
+  deleteDialog(id:string) {
     const dialogRef = this.dialog.open(ModalEliminarComponent, {
       data: null,
     })
     dialogRef.afterClosed().subscribe((result: any) => {
       console.log('the dialog was closed')
       if (result) {
-        this.productListMethod()
+        this.deleteProduct(id)
       }
     })
+  }
+
+  deleteProduct(id:string){
+    try{
+    this.productService.delete(id).subscribe(item=>console.log(item))
+    this.productListMethod();
+  
+    }catch(error){
+      console.log(error)
+    }
   }
 
   editDialog(element:Product) {

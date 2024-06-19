@@ -1,27 +1,35 @@
 <h2 mat-dialog-title *ngIf = "!data">Agregar producto</h2>
 <h2 mat-dialog-title *ngIf = "data">Editar producto</h2>
 <mat-dialog-content>
-    <form action="">
+    <form [formGroup]="formGroup">
     <mat-form-field appearance="outline">
-        <mat-label>Nombre</mat-label>
-        <input matInput placeholder="Placeholder" value={{data?.name}}>
+        <mat-label>Codigo</mat-label>
+        <input matInput type="text" placeholder="Codigo" formControlName="code" value={{data?.code}}>
       </mat-form-field>
       <mat-form-field appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input matInput type="text" placeholder="Nombre"  formControlName="name" value={{data?.name}}>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Categoria</mat-label>
+            <input matInput type="text" placeholder="Categoria"  formControlName="category" value={{data?.category}}>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+              <mat-label>Descripción</mat-label>
+              <input matInput type="text" placeholder="Descripción"  formControlName="description" value={{data?.description}}>
+            </mat-form-field>
+      <mat-form-field appearance="outline">
         <mat-label>Precio</mat-label>
-        <input matInput placeholder="Placeholder" value={{data?.price}}>
+        <input matInput type="number" placeholder="Precio"  formControlName="price" value={{data?.price}}>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Cantidad</mat-label>
-        <input matInput placeholder="Placeholder" value={{data?.amount}}>
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Estatus</mat-label>
-        <input matInput placeholder="Placeholder" value={{data?.status}}>
+        <input matInput type="number"  placeholder="Cantidad"  formControlName="amount" value={{data?.amount}}>
       </mat-form-field>
     </form>
 </mat-dialog-content>
 
 <mat-dialog-actions>
-    <button mat-raised-button>Guardar</button>
+    <button mat-raised-button (click)="save()">Guardar</button>
     <button mat-raised-button color="warn" mat-dialog-close="true">Cancelar</button>
 </mat-dialog-actions>

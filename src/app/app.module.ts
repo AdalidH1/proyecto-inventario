@@ -23,6 +23,9 @@ import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormProductsComponent } from './form-products/form-products.component';
 import { ModalEliminarComponent } from './modal-eliminar/modal-eliminar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
+import { FormUsersComponent } from './form-users/form-users.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { ModalEliminarComponent } from './modal-eliminar/modal-eliminar.componen
     ProductosComponent,
     ListaProductosComponent,
     FormProductsComponent,
-    ModalEliminarComponent
+    ModalEliminarComponent,
+    ListaUsuariosComponent,
+    FormUsersComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +49,8 @@ import { ModalEliminarComponent } from './modal-eliminar/modal-eliminar.componen
     MatDialogModule,
     MatSidenavModule,
     MatListModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatMenuModule,
     HttpClientModule,
     MatTableModule,

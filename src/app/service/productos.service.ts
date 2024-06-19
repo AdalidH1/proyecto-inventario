@@ -10,7 +10,16 @@ export class ProductosService {
   constructor(private http: HttpClient) { }
 
   
-getProducts(): Observable < Product[] > {
-  return this.http.get<Product[]>(this.url)
-}
+  getProducts():Observable<Product[]>{
+    return this.http.get<Product[]>(this.url)
+  }
+  addProduct(product:any):Observable<Product>{
+    return this.http.post<Product>(this.url,product)
+  }
+  editProduct(product:any):Observable<Product>{
+    return this.http.patch<Product>(this.url,product)
+  }
+  delete(id:string):Observable<Product>{
+    return this.http.delete<Product>(this.url+"/"+id)
+  }
 }
