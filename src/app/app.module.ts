@@ -26,6 +26,7 @@ import { ModalEliminarComponent } from './modal-eliminar/modal-eliminar.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
 import { FormUsersComponent } from './form-users/form-users.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FormUsersComponent } from './form-users/form-users.component';
     FormProductsComponent,
     ModalEliminarComponent,
     ListaUsuariosComponent,
-    FormUsersComponent
+    FormUsersComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

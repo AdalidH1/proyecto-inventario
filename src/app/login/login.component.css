@@ -1,0 +1,58 @@
+#app {
+    position: relative;
+    height: 100vh;
+  }
+  
+  .container {
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  .content {
+    width: 100%;
+    max-width: 25%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .error {
+    margin-top: -20px;
+    color: red;
+  }
+  
+  .table-content {
+    width: auto;
+    /* border: #7b1fa2 solid;
+      border-radius: 10px; */
+  }
+  
+  table {
+    width: auto;
+  }
+  
+  .mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td,
+  th {
+    width: 25%;
+  }
+  
+  
+  .example-container {
+    width: auto;
+    height: 100%;
+  }
+  
+  
+  .example-container::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari y Opera */
+  }
+  h1 {
+    text-align: center;
+  }
