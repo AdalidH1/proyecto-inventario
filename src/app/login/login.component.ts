@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { passwordValidator } from "./validators/password-validator";
 import { phoneValidator } from './validators/phone-validator';
 import { UserService } from 'src/app/service/user.service';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,9 @@ export class LoginComponent implements OnInit {
     event.stopPropagation();
   }
 
-  constructor(private formBuilder: FormBuilder, private userService:UserService ) { }
+  constructor(private formBuilder: FormBuilder, private userService:UserService,
+    private authService:AuthService
+   ) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -28,14 +31,15 @@ export class LoginComponent implements OnInit {
 
   initForm() {
     this.formGroup = this.formBuilder.group({
-      // name: ["", Validators.required],
+      username: ["", Validators.required],
       // lastName: ["", Validators.required],
       // age: ["", Validators.required],
-      email: ["", [Validators.required, Validators.email]],
+      // email: ["", [Validators.required, Validators.email]],
       // phone: ["", [Validators.required, phoneValidator()]],
-      password: ["", [Validators.required, passwordValidator()]],
+      password: ["", [Validators.required]],
       // status: ["", Validators.required]
-    });
+    },
+    );
   }
 
   get f() {
@@ -45,4 +49,8 @@ export class LoginComponent implements OnInit {
   //   console.log(this.formGroup.value)
   //   this.userService.addData(this.formGroup.value)
   // }
+  onLogin(){
+    this.authService.login(this.formGroup.value)
+  .subscribe(item => console.log(item.token))
+  }
 }

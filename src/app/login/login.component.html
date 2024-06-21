@@ -1,20 +1,20 @@
 <div class="container">
     <form [formGroup]="formGroup" class="content">
-        <!-- <mat-form-field appearance="outline">
+      <h1>Iniciar sesión</h1>
+        <mat-form-field appearance="outline">
         <mat-label>Nombre</mat-label>
         <input
-          formControlName="name"
+          formControlName="username"
           matInput
           type="text"
           placeholder="Ejem. Alan"
         />
-      </mat-form-field> -->
-      <!-- <div class="error" *ngIf="f['name'].errors?.['required'] && f['name'].touched">
+      </mat-form-field>
+      <div class="error" *ngIf="f['username'].errors?.['required'] && f['username'].touched">
         El nombre es obligatorio.
-      </div> -->
+      </div>
       
-      <h1>Iniciar sesión</h1>
-      <mat-form-field appearance="outline">
+      <!-- <mat-form-field appearance="outline">
         <mat-label>Correo</mat-label>
         <input
           formControlName="email"
@@ -28,7 +28,7 @@
       </div>
       <div class="error" *ngIf="f['email'].errors?.['email'] && f['email'].touched">
         El correo debe ser legitimo.
-      </div>
+      </div> -->
   
       <!-- <mat-form-field appearance="outline">
         <mat-label>Teléfono</mat-label>
@@ -65,6 +65,6 @@
         <div class="error" *ngIf="f['password'].errors?.['passwordStrength'] && f['password'].touched">
           La contraseña debe tener al menos 8 caracteres, incluyendo una mayúscula, una minúscula y un número.
         </div>
-      <button mat-flat-button color="accent"  [disabled]="formGroup.invalid">Iniciar sesión</button>
+      <button mat-flat-button color="accent" (click)="onLogin()"  [disabled]="formGroup.invalid">Iniciar sesión</button>
     </form>
   </div>
