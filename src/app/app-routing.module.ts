@@ -5,6 +5,7 @@ import { ProductosComponent } from './productos/productos.component';
 import { ListaProductosComponent } from './lista-productos/lista-productos.component';
 import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
 import { LoginComponent } from './login/login.component';
+import { CardProductComponent } from './card-product/card-product.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'productos', component: ListaProductosComponent },
   { path: 'usuarios', component: ListaUsuariosComponent },
+  { path: 'products', component: CardProductComponent },
   { path: '**', redirectTo: '/inicio' }  // Ruta comodín para URLs no encontradas
 ];
 

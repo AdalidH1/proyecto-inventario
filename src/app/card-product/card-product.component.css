@@ -1,0 +1,21 @@
+
+.example-card {
+    margin: 2vh;
+    max-width: 200px;
+    display: flex;
+  flex-wrap: wrap;
+  }
+
+  .noProduct{
+    color: rgb(136, 0, 0);
+  }
+
+div{
+  display: flex;
+  flex-wrap: wrap;
+  }
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  

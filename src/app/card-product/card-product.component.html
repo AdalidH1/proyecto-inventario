@@ -1,0 +1,25 @@
+<div>
+    <mat-card class="example-card" appearance="outlined" *ngFor="let product of products">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{product.name}}</mat-card-title>
+            <mat-card-subtitle>{{product.category}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>
+                {{product.description}}
+            </p>
+            <p class="noProduct" *ngIf="product.status === false">
+                No se encuentra disponible
+            </p>
+            <p *ngIf="product.status === true">
+                En existencia: {{product.amount}}
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button *ngIf="product.status === true" color="accent" mat-button>Añadir al carro</button>
+            <button *ngIf="product.status === false" disabled="" mat-button>Añadir al carro</button>
+            <button disabled="" mat-button>Precio ${{product.price}}</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

@@ -15,6 +15,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { InicioComponent } from './inicio/inicio.component';
 import { ProductosComponent } from './productos/productos.component';
 import { ListaProductosComponent } from './lista-productos/lista-productos.component';
+import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MatDialogModule } from '@angular/material/dialog';
@@ -27,6 +28,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
 import { FormUsersComponent } from './form-users/form-users.component';
 import { LoginComponent } from './login/login.component';
+import { CardProductComponent } from './card-product/card-product.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { LoginComponent } from './login/login.component';
     ModalEliminarComponent,
     ListaUsuariosComponent,
     FormUsersComponent,
-    LoginComponent
+    LoginComponent,
+    CardProductComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,7 @@ import { LoginComponent } from './login/login.component';
     MatListModule,
     FormsModule,
     ReactiveFormsModule,
-    MatMenuModule,
+    MatMenuModule,MatCardModule,
     HttpClientModule,
     MatTableModule,
     MatFormFieldModule,
