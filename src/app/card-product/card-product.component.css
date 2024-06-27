@@ -19,3 +19,12 @@ div{
     background-size: cover;
   }
   
+
+  button{
+    padding: 20px;
+  }
+
+  .cart{
+    margin: 2vh;
+    margin-left: auto;
+  }

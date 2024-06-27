@@ -29,6 +29,7 @@ import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.componen
 import { FormUsersComponent } from './form-users/form-users.component';
 import { LoginComponent } from './login/login.component';
 import { CardProductComponent } from './card-product/card-product.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { CardProductComponent } from './card-product/card-product.component';
     ListaUsuariosComponent,
     FormUsersComponent,
     LoginComponent,
-    CardProductComponent
+    CardProductComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

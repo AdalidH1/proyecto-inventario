@@ -16,4 +16,13 @@ export class AuthService {
       tap (user => localStorage.setItem('token', JSON.stringify(user.token)))
     )
   }
+
+  isAuthenticateUser(): boolean{
+    let token = localStorage.getItem("token")
+    if(token !== null && token !== ""){
+      return true
+    }else {
+      return false
+    }
+  }
 }

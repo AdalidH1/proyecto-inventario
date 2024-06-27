@@ -6,16 +6,17 @@ import { ListaProductosComponent } from './lista-productos/lista-productos.compo
 import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
 import { LoginComponent } from './login/login.component';
 import { CardProductComponent } from './card-product/card-product.component';
+import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/inicio', pathMatch: 'full' },
-  { path: 'inicio', component: InicioComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'inicio', component: InicioComponent, canActivate:[AuthGuard] },
   { path: 'login', component: LoginComponent },
-  { path: 'productos', component: ListaProductosComponent },
-  { path: 'usuarios', component: ListaUsuariosComponent },
-  { path: 'products', component: CardProductComponent },
-  { path: '**', redirectTo: '/inicio' }  // Ruta comodín para URLs no encontradas
+  { path: 'productos', component: ListaProductosComponent, canActivate:[AuthGuard] },
+  { path: 'usuarios', component: ListaUsuariosComponent, canActivate:[AuthGuard] },
+  { path: 'products', component: CardProductComponent, canActivate:[AuthGuard] },
+  { path: '**', redirectTo: '/login' }  // Ruta comodín para URLs no encontradas
 ];
 
 @NgModule({
