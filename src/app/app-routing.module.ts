@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'productos', component: ListaProductosComponent, canActivate:[AuthGuard] },
   { path: 'usuarios', component: ListaUsuariosComponent, canActivate:[AuthGuard] },
-  { path: 'products', component: CardProductComponent, canActivate:[AuthGuard] },
+  { path: 'tienda', component: CardProductComponent, canActivate:[AuthGuard] },
   { path: '**', redirectTo: '/login' }  // Ruta comodín para URLs no encontradas
 ];
 
