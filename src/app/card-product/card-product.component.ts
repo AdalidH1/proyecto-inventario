@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../service/productos.service';
 import { Product } from '../models/product';
+import { DetailServiceService } from '../service/detail-service.service';
 
 @Component({
   selector: 'app-card-product',
@@ -10,7 +11,10 @@ import { Product } from '../models/product';
 export class CardProductComponent implements OnInit {
 
   products!: Product[];
-  constructor(private productService:ProductosService) {}
+  constructor(private productService:ProductosService,
+    
+    private carritoService: DetailServiceService
+  ) {}
   ngOnInit(): void {
     this.productListMethod();
     }
@@ -24,5 +28,9 @@ export class CardProductComponent implements OnInit {
         console.error('Error fetching products', error);
       }
     );
+}
+
+addToCarrito(product: Product): void {
+  this.carritoService.addToCarrito(product);
 }
 }

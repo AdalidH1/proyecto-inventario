@@ -17,8 +17,8 @@
             </p>
         </mat-card-content>
         <mat-card-actions>
-            <button *ngIf="product.status === true" color="accent" mat-raised-button>Añadir al carro</button>
-            <button *ngIf="product.status === false" disabled="" mat-raised-button>Añadir al carro</button>
+            <button *ngIf="product.status === true" color="accent" mat-raised-button (click)="addToCarrito(product)">Añadir al carro</button>
+            <button *ngIf="product.status === false" color="accent" disabled="" mat-raised-button (click)="addToCarrito(product)">Añadir al carro</button>
             <button disabled=""  mat-button>Precio ${{product.price}}</button>
         </mat-card-actions>
     </mat-card>
